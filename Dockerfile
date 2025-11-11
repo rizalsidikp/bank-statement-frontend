@@ -16,6 +16,9 @@ COPY . .
 # run linting
 RUN npm run lint
 
+# run tests
+RUN npm run test 
+
 # Build project for production
 RUN npm run build
 

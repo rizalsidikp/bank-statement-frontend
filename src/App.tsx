@@ -1,8 +1,8 @@
 import './App.css'
 import SummaryCard from './components/SummaryCard';
 import StatementTable from './components/StatementTable';
-import FileUploader from './components/UploadFile';
-import { getBalanceAPI, getIssuesAPI, uploadStatementAPI } from './services/api';
+import FileUploader from './components/FileUploader';
+import { getBalanceAPI, getIssuesAPI, uploadStatementAPI } from './services/statement';
 import { useEffect, useState } from 'react';
 import type { StatementsResponse, SummaryResponse } from './entity/response';
 

@@ -19,14 +19,14 @@ const FileUploader: React.FC<FileUploaderProps> = ({
     reader.readAsText(f);
     if (window.confirm("Process this file?")) {
       if (onSubmit) {
-      onSubmit(f);
+        onSubmit(f);
       }
     }
   };
   return (
     <div className="uploader">
       <label className="file-label">
-        <input type="file" accept=".csv,text/csv" onChange={(e) => handleFile(e.target.files?.[0])} />
+        <input id="file-input" name="file-input" data-testid="file-input" type="file" accept=".csv,text/csv" onChange={(e) => handleFile(e.target.files?.[0])} />
         <div>
           <strong>Upload Statement</strong>
           <div className="muted">Allowed Format: .csv</div>

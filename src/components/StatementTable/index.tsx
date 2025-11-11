@@ -14,8 +14,8 @@ interface StatementData {
 
 interface StatementProps {
     data: Array<StatementData> | [];
-    loading: boolean;
-    error: string;
+    loading?: boolean;
+    error?: string;
 };
 
 type TransactionSort = {
@@ -29,8 +29,8 @@ type TransactionSort = {
 
 const StatementTable: React.FC<StatementProps> = ({
     data,
-    loading,
-    error,
+    loading = false,
+    error = "",
 }) => {
 
     const [sortKey, setSortKey] = useState<keyof TransactionSort>("timestamp");
@@ -139,7 +139,7 @@ const StatementTable: React.FC<StatementProps> = ({
                     ) : error ? (
                         <tr><td colSpan={6} className="error">{error}</td></tr>
                     ) : currentData.length === 0 ? (
-                        <tr><td colSpan={6} className="muted">No transactions found</td></tr>
+                        <tr><td colSpan={6} className="muted">No statements found</td></tr>
                     ) : (
                         currentData.map((tx, i) => (
                             <tr key={i}>
@@ -151,7 +151,6 @@ const StatementTable: React.FC<StatementProps> = ({
                                     <span className={`status ${tx.status.toLowerCase()}`}>
                                         {tx.status === "PENDING" && "⚠️"}
                                         {tx.status === "FAILED" && "❌"}
-                                        {tx.status === "SUCCESS" && "✅"}
                                         &nbsp;{tx.status}
                                     </span>
                                 </td>

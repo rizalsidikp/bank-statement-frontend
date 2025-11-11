@@ -5,7 +5,7 @@ export interface SummaryResponse {
 };
 
 export interface StatementsResponse{
-  id: number;
+  id: string;
   timestamp: number;
   name: string;
   type: "DEBIT" | "CREDIT";

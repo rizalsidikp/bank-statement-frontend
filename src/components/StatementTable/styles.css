@@ -1,0 +1,97 @@
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* biar bisa scroll kanan-kiri */
+  padding-bottom: 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background: #f3f3f3;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.table tr:hover {
+  background: #f9f9f9;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.status.success {
+  color: green;
+  background: #e6ffed;
+}
+
+.status.failed {
+  color: red;
+  background: #ffeaea;
+}
+
+.status.pending {
+  color: #b38b00;
+  background: #fff8d1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.table .muted {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+}
+
+.sortable {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.info-cell {
+  white-space: nowrap; /* biar ga turun ke bawah */
+}
+
+.table .error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}

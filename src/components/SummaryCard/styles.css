@@ -1,0 +1,39 @@
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* biar tengah pas item < 4 */
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  flex: 1 1 250px; /* min 250px, tapi bisa melar */
+  max-width: 400px; /* optional: biar gak terlalu lebar di layar besar */
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fafafa;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.value {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.credit {
+  color: green;
+}
+
+.debit {
+  color: blue;
+}
+
+/* Optional: sedikit efek hover biar lebih hidup */
+.summary-item:hover {
+  background: #f3f3f3;
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}

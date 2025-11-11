@@ -11,7 +11,7 @@ Frontend application for managing and displaying bank statement data.
 
 ## Prerequisites
 
-- Node.js (v18 or higher)
+- Node.js (v20 or higher)
 - npm (v9 or higher)
 - Modern web browser
 - Access to required API endpoints

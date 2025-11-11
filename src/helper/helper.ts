@@ -16,16 +16,16 @@ export function formatTimestamp(ts: number): string {
   });
 }
 
-export function snakeToCamel(obj: any): any {
-  if (Array.isArray(obj)) {
-    return obj.map(snakeToCamel);
-  } else if (obj !== null && obj.constructor === Object) {
-    const newObj: Record<string, any> = {};
-    Object.keys(obj).forEach((key) => {
+export function snakeToCamel<T>(input: T): T {
+  if (Array.isArray(input)) {
+    return input.map(snakeToCamel) as T;
+  } else if (input !== null && typeof input === 'object' && input.constructor === Object) {
+    const newObj: Record<string, T> = {};
+    Object.keys(input).forEach((key) => {
       const camelKey = key.replace(/_([a-z])/g, (_, c) => c.toUpperCase());
-      newObj[camelKey] = snakeToCamel(obj[key]);
+      newObj[camelKey] = snakeToCamel((input as Record<string, T>)[key]);
     });
-    return newObj;
+    return newObj as T;
   }
-  return obj;
+  return input;
 }

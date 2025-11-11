@@ -13,6 +13,9 @@ RUN npm install
 # Copy all source code
 COPY . .
 
+# run linting
+RUN npm run lint
+
 # Build project for production
 RUN npm run build
 

@@ -38,6 +38,29 @@ Frontend application for managing and displaying bank statement data.
   ```bash
   npm run dev
   ```
+```bash
+docker run -d -p 5173:80 bank-statement-frontend
+```
+
+## Testing
+
+### Run unit tests
+```bash
+npm run test
+```
+
+### Run unit tests with coverage and generate report ui web
+```bash
+npm run test:ui
+```
+
+## Linting
+
+### Run linting
+```bash
+npm run lint
+```
+
 ## Docker
 
 ### Build the Docker image
@@ -46,6 +69,3 @@ docker build -t bank-statement-frontend .
 ```
 
 ### Run the Docker container
-```bash
-docker run -d -p 5173:80 bank-statement-frontend
-```

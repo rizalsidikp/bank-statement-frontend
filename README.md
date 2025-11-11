@@ -68,4 +68,7 @@ npm run lint
 docker build -t bank-statement-frontend .
 ```
 
-### Run the Docker container
+### Run the Docker 
+```bash
+docker run -d -p 5173:80 bank-statement-frontend
+```

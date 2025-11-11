@@ -17,8 +17,10 @@ function App() {
       setLoadingBalance(true);
       const data = await getBalanceAPI();
       setBalance(data);
-    } catch (error:any) {
-      setErrorBalance(error.message || "Failed to fetch balance");
+    } catch (error) {
+      setErrorBalance(
+        error instanceof Error ? error.message : "Failed to fetch balance"
+      );
     } finally {
       setLoadingBalance(false);
     }
@@ -34,8 +36,10 @@ function App() {
       setLoadingStatements(true);
       const data = await getIssuesAPI();
       setStatements(data);
-    } catch (error:any) {
-      setErrorStatements(error.message || "Failed to fetch statements");
+    } catch (error) {
+      setErrorStatements(
+        error instanceof Error ? error.message : "Failed to fetch statements"
+      );
     } finally {
       setLoadingStatements(false);
     }
@@ -49,7 +53,7 @@ function App() {
       getIssuedStatements();
       alert("File processed successfully.");
     } catch (error) {
-      alert("Error processing file.");
+      alert("Error processing file : " + (error instanceof Error ? error.message : String(error)));
     }
   }
 

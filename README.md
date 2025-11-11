@@ -72,3 +72,6 @@ docker build -t bank-statement-frontend .
 ```bash
 docker run -d -p 5173:80 bank-statement-frontend
 ```
+
+## Github Workflow
+The Github Worfklow run linter, unit test, and build docker

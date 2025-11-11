@@ -38,9 +38,6 @@ Frontend application for managing and displaying bank statement data.
   ```bash
   npm run dev
   ```
-```bash
-docker run -d -p 5173:80 bank-statement-frontend
-```
 
 ## Testing
 
